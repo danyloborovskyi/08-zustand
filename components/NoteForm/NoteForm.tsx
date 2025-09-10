@@ -5,7 +5,7 @@ import type { Tag } from "@/types/note";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { createNote } from "@/lib/api";
-import { useNoteDraftStore } from "@/lib/noteStore";
+import { useNoteDraftStore } from "@/lib/store/noteStore";
 import DraftSaver from "../DraftSaver/DraftSaver";
 
 export interface NoteValues {
