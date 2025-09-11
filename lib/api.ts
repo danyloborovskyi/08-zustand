@@ -66,11 +66,11 @@ export async function fetchNotes(
 //   return response.data;
 // }
 
-export interface NewNote {
+export type NewNote = {
   title: string;
   content: string;
   tag: string;
-}
+};
 
 export async function createNote(newNote: NewNote): Promise<Note> {
   const response = await axios.post<Note>("/notes", newNote);

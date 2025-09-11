@@ -17,15 +17,23 @@ const NotesByCategory = async ({ params }: Props) => {
   const { slug } = await params;
   console.log(slug);
 
+  const perPage = 12;
+
   const query =
     slug[0] === "All"
-      ? { search: "", page: 1 }
-      : { search: "", page: 1, tag: slug[0] as Tag };
+      ? { search: "", page: 1, perPage }
+      : { search: "", page: 1, perPage, tag: slug[0] as Tag };
 
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
-    queryKey: ["note", query],
+    queryKey: [
+      "notes",
+      "",
+      1,
+      12,
+      slug[0] === "All" ? undefined : (slug[0] as Tag),
+    ],
     queryFn: () => fetchNotes(query),
   });
 
