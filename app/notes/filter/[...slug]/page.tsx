@@ -7,7 +7,7 @@ import { fetchNotes } from "@/lib/api";
 
 import type { Tag } from "@/types/note";
 
-import NotesFilterClient from "./NotesFilter.client";
+import NotesFilterClient from "./Notes.client";
 
 type Props = {
   params: Promise<{ slug: string[] }>;

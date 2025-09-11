@@ -13,7 +13,7 @@ import { fetchNotes } from "@/lib/api";
 import NoteList from "@/components/NoteList/NoteList";
 import type { NoteResponse } from "@/lib/api";
 import type { Tag } from "@/types/note";
-import Error from "../../error";
+import Error from "./error";
 import Loading from "../../../loading";
 
 interface NotesFilterProps {

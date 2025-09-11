@@ -7,7 +7,7 @@ import { useParams, useRouter } from "next/navigation";
 import { fetchNoteById } from "@/lib/api";
 import ModalPreview from "@/components/ModalPreview/ModalPreview";
 
-import NoteError from "../../../notes/error";
+import NoteError from "../../../notes/filter/[...slug]/error";
 import Loading from "../../../loading";
 
 export default function NotePreviewClient() {
