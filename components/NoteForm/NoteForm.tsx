@@ -108,6 +108,8 @@
 //   );
 // }
 
+"use client";
+
 import css from "./NoteForm.module.css";
 // import { ErrorMessage, Formik, Form, Field } from "formik";
 import * as Yup from "yup";
@@ -125,13 +127,13 @@ export interface NoteValues {
   tag: Tag;
 }
 
-interface NoteFormProps {
-  onClose: () => void;
-}
+// interface NoteFormProps {
+//   onClose: () => void;
+// }
 
 const tags: Tag[] = ["Work", "Personal", "Meeting", "Shopping", "Todo"];
 
-export default function NoteForm({ onClose }: NoteFormProps) {
+export default function NoteForm() {
   const { draft, setDraft, clearDraft } = useNoteDraftStore();
   const router = useRouter();
 

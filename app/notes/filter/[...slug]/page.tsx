@@ -4,6 +4,7 @@ import {
   dehydrate,
 } from "@tanstack/react-query";
 import { fetchNotes } from "@/lib/api";
+import { Metadata } from "next";
 
 import type { Tag } from "@/types/note";
 
@@ -48,7 +49,7 @@ const NotesByCategory = async ({ params }: Props) => {
 
 export default NotesByCategory;
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   return {
     title: `Notehub list: ${slug}`,
